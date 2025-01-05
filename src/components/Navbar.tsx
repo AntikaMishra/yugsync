@@ -14,14 +14,14 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm">
+    <nav className="fixed w-full bg-black/90 backdrop-blur-sm z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0">
               <div className="flex items-center gap-2">
-                <Monitor className="h-8 w-8 text-indigo-600" />
-                <span className="text-xl font-bold text-gray-900">YugSync</span>
+                <img src="https://res.cloudinary.com/dsfxndyhf/image/upload/v1736104877/WhatsApp_Image_2025-01-04_at_11.19.31_PM_dmcvas-removebg-preview_phwfnr.png" className=" h-20 w-20 " />
+                <span className="text-xl font-bold text-white">YugSync</span>
               </div>
             </Link>
           </div>
@@ -34,7 +34,7 @@ export default function Navbar() {
                   className={`px-3 py-2 rounded-md text-sm font-medium ${
                     location.pathname === item.href
                       ? 'bg-indigo-600 text-white'
-                      : 'text-gray-900 hover:text-indigo-600'
+                      : 'text-white hover:text-indigo-600'
                   }`}
                 >
                   {item.name}
@@ -45,7 +45,7 @@ export default function Navbar() {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-900 hover:text-indigo-600"
+              className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-indigo-600"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>

@@ -12,7 +12,8 @@ const services = [
     title: 'Automation Solutions',
     description: 'Automation solutions that automate your business processes. Our team of experts creates custom automation solutions using the latest automation technologies',
     icon: Cloud,
-    features: ['AWS/Azure/GCP', 'Cloud Migration', 'Infrastructure as Code', 'Cost Optimization']
+    features: ['AWS/Azure/GCP', 'Cloud Migration', 'Infrastructure as Code', 'Cost Optimization'],
+    image: 'https://res.cloudinary.com/dsfxndyhf/image/upload/v1736104448/cloud-8598424_1280_koocok.jpg'
   },
   {
     title: 'Web Development',
@@ -81,7 +82,7 @@ export default function ServicesPage() {
               <div className={`mt-10 ${index % 2 === 0 ? 'lg:order-2' : ''} lg:mt-0`}>
                 <img
                   className="rounded-xl shadow-xl ring-1 ring-black ring-opacity-5"
-                  src={`https://images.unsplash.com/photo-${index + 1}?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80`}
+                  src={`${service.image}`}
                   alt={service.title}
                 />
               </div>
