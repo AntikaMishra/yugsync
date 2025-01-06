@@ -1,39 +1,53 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 
-export default function Hero() {
+const backgrounds = [
+  "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80",
+  "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80",
+  "https://images.unsplash.com/photo-1462332420958-a05d1e002413?auto=format&fit=crop&q=80"
+];
+
+export function Hero({ onGetStarted }: { onGetStarted: () => void }) {
+  const [currentBg, setCurrentBg] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentBg((prev) => (prev + 1) % backgrounds.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <div id="home" className="relative bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto">
-        <div className="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
-          <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-            <div className="sm:text-center lg:text-left">
-              <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                <span className="block">Your Ideas</span>
-                <span className="block text-indigo-600">Our Innovations</span>
-              </h1>
-              <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-              We empower businesses with innovative technology to enhance growth, optimize operations, and lead in their industry.
-              </p>
-              <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-                <div className="rounded-md shadow">
-                  <a href="#contact" className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
-                    Get Started
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </a>
-                </div>
-                <div className="mt-3 sm:mt-0 sm:ml-3">
-                  <a href="#services" className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10">
-                    Learn More
-                  </a>
-                </div>
-              </div>
-            </div>
-          </main>
+    <div className="relative min-h-screen flex items-center justify-center">
+      {backgrounds.map((bg, index) => (
+        <div 
+          key={bg}
+          className="absolute inset-0 z-0 transition-opacity duration-1000"
+          style={{
+            backgroundImage: `url("${bg}")`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            opacity: currentBg === index ? 1 : 0,
+          }}
+        >
+          <div className="absolute inset-0 bg-black/50" />
         </div>
-      </div>
-      <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-        <img className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80" alt="Team working" />
+      ))}
+
+      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 transition-all duration-300">
+          Explore the Universe of Possibilities
+        </h1>
+        <p className="text-xl sm:text-2xl text-gray-200 mb-8 transition-all duration-300">
+          Embark on a journey to transform your digital presence
+        </p>
+        <button 
+          onClick={onGetStarted}
+          className="group inline-flex items-center gap-2 bg-white text-gray-900 px-6 py-3 rounded-full text-lg font-semibold transition-all duration-300 hover:bg-gray-100 hover:scale-105 hover:shadow-lg"
+        >
+          Get Started
+          <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+        </button>
       </div>
     </div>
   );

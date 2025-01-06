@@ -40,7 +40,7 @@ At YugSync, we’re not just another tech company-we are a dynamic partner, eage
           <div className="mt-10 lg:mt-0">
             <img
               className="rounded-lg shadow-xl"
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
+              src="https://res.cloudinary.com/dsfxndyhf/image/upload/v1736182486/industry-2633879_640_sanoi8.jpg"
               alt="Team meeting"
             />
           </div>

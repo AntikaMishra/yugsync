@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Monitor } from 'lucide-react';
+import { Menu, X, Atom } from 'lucide-react';
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
   const navigation = [
@@ -14,64 +14,70 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed w-full bg-black/90 backdrop-blur-sm z-50 shadow-sm">
+    <nav className="bg-gradient-to-r from-gray-900 to-slate-800 fixed w-full top-0 z-50 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center">
-            <Link to="/" className="flex-shrink-0">
-              <div className="flex items-center gap-2">
-                <img src="https://res.cloudinary.com/dsfxndyhf/image/upload/v1736104877/WhatsApp_Image_2025-01-04_at_11.19.31_PM_dmcvas-removebg-preview_phwfnr.png" className=" h-20 w-20 " />
-                <span className="text-xl font-bold text-white">YugSync</span>
+          {/* Logo */}
+          <div className="flex-shrink-0 flex items-center group">
+            <div className="relative">
+              <div className="relative transform group-hover:scale-110 transition-all duration-300">
+                <Atom className="h-8 w-8 text-emerald-400 animate-pulse" />
+                <div className="absolute inset-0 bg-emerald-400 blur-sm opacity-50 animate-pulse" />
               </div>
-            </Link>
+            </div>
+            <span className="ml-3 text-xl font-bold text-white tracking-tight">
+              <span className="font-black bg-gradient-to-r from-emerald-400 to-white bg-clip-text text-transparent">Yug</span>
+              <span className="font-light">Sync</span>
+            </span>
           </div>
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
+
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center space-x-8">
+            {navigation.map((item) => (
+              <Link
+                key={item.name}
+                to={item.href}
+                className={`text-gray-300 hover:text-emerald-400 font-medium transition-all duration-200 relative group ${
+                  location.pathname === item.href
+                    ? 'text-emerald-400'
+                    : 'text-gray-300'
+                }`}
+              >
+                {item.name}
+                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-emerald-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200" />
+              </Link>
+            ))}
+          </div>
+
+          {/* Mobile Menu Button */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="text-gray-300 hover:text-emerald-400 p-2 transition-colors duration-200"
+            >
+              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="md:hidden">
+            <div className="px-2 pt-2 pb-3 space-y-1">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className={`px-3 py-2 rounded-md text-sm font-medium ${
-                    location.pathname === item.href
-                      ? 'bg-indigo-600 text-white'
-                      : 'text-white hover:text-indigo-600'
-                  }`}
+                  className="block px-3 py-2 text-base font-medium text-gray-300 hover:text-emerald-400 hover:bg-gray-800 rounded-md transition-all duration-200"
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
             </div>
           </div>
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-indigo-600"
-            >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
-          </div>
-        </div>
+        )}
       </div>
-      {isOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className={`block px-3 py-2 rounded-md text-base font-medium ${
-                  location.pathname === item.href
-                    ? 'bg-indigo-600 text-white'
-                    : 'text-gray-900 hover:text-indigo-600'
-                }`}
-                onClick={() => setIsOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div>
-        </div>
-      )}
     </nav>
   );
 }

@@ -54,7 +54,7 @@ export default function Contact() {
             <div className="mt-12">
               <img
                 className="rounded-lg shadow-lg"
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                src="https://res.cloudinary.com/dsfxndyhf/image/upload/v1736181217/global-business-9062781_640_cvj3uw.webp"
                 alt="Office"
               />
             </div>
