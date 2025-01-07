@@ -6,40 +6,45 @@ const services = [
     title: 'Custom Software Development',
     description: 'Tailored software solutions designed to meet your specific business needs. Our expert developers create scalable, maintainable, and efficient applications using the latest technologies.',
     icon: Code2,
-    features: ['Web Applications', 'Mobile Apps', 'Desktop Software', 'API Development']
+    features: ['Web Applications', 'Mobile Apps', 'Desktop Software', 'API Development'],
+    image: 'https://res.cloudinary.com/dsfxndyhf/image/upload/v1736180285/internet-4463031_640_l1bfsv.webp'
   },
   {
     title: 'Automation Solutions',
     description: 'Automation solutions that automate your business processes. Our team of experts creates custom automation solutions using the latest automation technologies',
     icon: Cloud,
-    features: ['AWS/Azure/GCP', 'Cloud Migration', 'Infrastructure as Code', 'Cost Optimization']
+    features: ['Process Optimization', 'Real-Time Monitoring', 'Customization', 'Integration Capabilities'],
+    image: 'https://res.cloudinary.com/dsfxndyhf/image/upload/v1736104448/cloud-8598424_1280_koocok.jpg'
   },
   {
     title: 'Web Development',
     description: 'We bring your vision to life with cutting-edge web development solutions. Our team of experts delivers modern, responsive, and user-friendly web applications using the latest web technologies.',
     icon: LineChart,
-    features: ['Business Intelligence', 'Predictive Analytics', 'Data Visualization', 'Real-time Analytics']
+    features: ['User-Friendly Interface', 'Mobile Responsiveness', 'High Performance', 'Security'],
+    image:'https://res.cloudinary.com/dsfxndyhf/image/upload/v1736180785/website-3374825_640_d8joxt.webp'
   },
   {
     title: 'App Development',
     description: 'Mobile apps that bring your business to life on the go. Our team of experts creates cross-platform apps using the latest mobile technologies.',
     icon: Shield,
-    features: ['Security Audits', 'Penetration Testing', 'Compliance Management', 'Security Training']
+    features: ['User-Centric Design', 'Cross-Platform Compatibility', 'Performance Optimization', 'Robust Security'],
+    image:'https://res.cloudinary.com/dsfxndyhf/image/upload/v1736180728/smartphone-6701409_640_e9depm.webp'
   },
   {
     title: 'IOS Development',
     description: 'iOS apps that bring your business to life on the go. Our team of experts creates cross-platform apps using the latest mobile technologies.',
     icon: Server,
-    features: ['Network Design', 'System Integration', 'Infrastructure Monitoring', 'Disaster Recovery']
+    features: ['Seamless User Experience', 'High Performance', 'App Store Integration', 'Advanced Security'],
+    image:'https://res.cloudinary.com/dsfxndyhf/image/upload/v1736180747/ui-771829_640_sjrjss.webp'
   },
   {
     title: 'Ecommerce Websites',
     description: 'E-commerce websites that bring your business to life online. Our team of experts creates responsive and user-friendly e-commerce solutions using the latest web technologies.',
     icon: Workflow,
-    features: ['Process Automation', 'Legacy System Modernization', 'Digital Strategy', 'Change Management']
+    features: ['User-Friendly Navigation', 'Secure Payment Gateway', 'Product Search & Filtering', 'Mobile Responsiveness'],
+    image: 'https://res.cloudinary.com/dsfxndyhf/image/upload/v1736180635/ecommerce-2140603_640_v6xgg3.jpg'
   }
 ];
-
 export default function ServicesPage() {
   return (
     <div className="py-24">
@@ -80,9 +85,9 @@ export default function ServicesPage() {
                 </div>
               </div>
               <div className={`mt-10 ${index % 2 === 0 ? 'lg:order-2' : ''} lg:mt-0`}>
-                <img
-                  className="rounded-xl shadow-xl ring-1 ring-black ring-opacity-5"
-                  src={`https://images.unsplash.com/photo-${index + 1}?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80`}
+              <img
+                  className="rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 w-full h-[300px] object-cover"
+                  src={`${service.image}`}
                   alt={service.title}
                 />
               </div>
