@@ -2,10 +2,10 @@ import React from 'react';
 import { Award, Users, Target, Briefcase } from 'lucide-react';
 
 const stats = [
-  { label: 'Years of Experience', value: '10+' },
-  { label: 'Successful Projects', value: '500+' },
+  { label: 'Years of Experience', value: '6+' },
+  { label: 'Successful Projects', value: '50+' },
   { label: 'Client Satisfaction', value: '98%' },
-  { label: 'Team Members', value: '50+' }
+  { label: 'Team Members', value: '15+' }
 ];
 
 const values = [
@@ -38,10 +38,10 @@ export default function AboutPage() {
         {/* Hero Section */}
         <div className="text-center">
           <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl">
-            About TechPro Solutions
+            About YugSync Tech Solutions
           </h1>
           <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
-            Empowering businesses through innovative technology solutions since 2014
+            Transforming Businesses With Futuristic Tech Solutions.
           </p>
         </div>
 
@@ -95,39 +95,8 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Team Section */}
-        <div className="mt-20">
-          <h2 className="text-3xl font-extrabold text-gray-900 text-center">Our Leadership Team</h2>
-          <div className="mt-12 grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              {
-                name: 'John Smith',
-                role: 'CEO & Founder',
-                image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80'
-              },
-              {
-                name: 'Sarah Johnson',
-                role: 'CTO',
-                image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80'
-              },
-              {
-                name: 'Michael Chen',
-                role: 'Head of Operations',
-                image: 'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80'
-              }
-            ].map((member, index) => (
-              <div key={index} className="text-center">
-                <img
-                  className="mx-auto h-40 w-40 rounded-full"
-                  src={member.image}
-                  alt={member.name}
-                />
-                <h3 className="mt-6 text-xl font-medium text-gray-900">{member.name}</h3>
-                <p className="text-indigo-600">{member.role}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+       {/* Team Section */}
+        
       </div>
     </div>
   );

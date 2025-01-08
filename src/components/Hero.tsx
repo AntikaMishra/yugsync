@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 
 const backgrounds = [
-  "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1516339901601-2e1b62dc0c45?auto=format&fit=crop&q=80",
-  "https://images.unsplash.com/photo-1462332420958-a05d1e002413?auto=format&fit=crop&q=80"
+  "https://res.cloudinary.com/ddmhkcwad/image/upload/v1736346214/digital-8560051_640_qafkhc.webp",
+  "https://res.cloudinary.com/ddmhkcwad/image/upload/v1736346234/macbook-2573421_640_k8ec97.jpg",
+  "https://res.cloudinary.com/ddmhkcwad/image/upload/v1736346249/technology-8676540_640_epktsj.webp"
 ];
 
 export function Hero({ onGetStarted }: { onGetStarted: () => void }) {
@@ -34,12 +34,12 @@ export function Hero({ onGetStarted }: { onGetStarted: () => void }) {
         </div>
       ))}
 
-      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+      <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 transition-all duration-300">
-          Explore the Universe of Possibilities
+          Your Idea Our Innovation
         </h1>
-        <p className="text-xl sm:text-2xl text-gray-200 mb-8 transition-all duration-300">
-          Embark on a journey to transform your digital presence
+        <p className="text-xl sm:text-3xl text-gray-200 mb-8 transition-all duration-300">
+          Innovate Beyond Boundaries
         </p>
         <button 
           onClick={onGetStarted}

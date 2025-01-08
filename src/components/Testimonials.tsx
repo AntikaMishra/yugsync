@@ -6,13 +6,13 @@ const testimonials = [
     name: 'Sarah Johnson',
     role: 'CEO at TechStart',
     image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    quote: 'TechPro Solutions transformed our business operations. Their expertise in cloud solutions helped us scale efficiently.'
+    quote: ' YugSync Tech Solutions transformed our business operations. Their expertise in cloud solutions helped us scale efficiently.'
   },
   {
     name: 'Michael Chen',
     role: 'CTO at InnovateCorp',
     image: 'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-    quote: 'The cybersecurity solutions provided by TechPro have given us peace of mind. Highly recommended!'
+    quote: 'The cybersecurity solutions provided by YugSync  have given us peace of mind. Highly recommended!'
   },
   {
     name: 'Emily Rodriguez',
