@@ -85,33 +85,41 @@ export default function ContactPage() {
 
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
-              <div className="sm:col-span-2">
+          <form action="https://formbold.com/s/3ddpE" method="POST" className="space-y-6 bg-white rounded-lg px-8 py-6 shadow-lg">
+            <div className="space-y-2">
+              <h3 className="text-2xl font-medium text-gray-900">Send us a message</h3>
+              <p className="text-base text-gray-500">Fill out this form and we will get in touch with you as soon as possible.</p>
+            </div>
+
+            <div className="mt-6 space-y-6">
+              <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                  Full Name *
+                  Full Name
                 </label>
                 <input
                   type="text"
                   name="name"
                   id="name"
                   value={formData.name}
+                  placeholder='John Doe'
                   onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
                   required
                 />
               </div>
 
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                  Email *
+                  Email
                 </label>
                 <input
                   type="email"
                   name="email"
                   id="email"
                   value={formData.email}
+                  placeholder='yugsync@gmail.com'
                   onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
                   required
                 />
               </div>
@@ -125,69 +133,38 @@ export default function ContactPage() {
                   name="phone"
                   id="phone"
                   value={formData.phone}
+                  placeholder='+91 9393939393'
                   onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-                />
-              </div>
-
-              <div className="sm:col-span-2">
-                <label htmlFor="company" className="block text-sm font-medium text-gray-700">
-                  Company Name
-                </label>
-                <input
-                  type="text"
-                  name="company"
-                  id="company"
-                  value={formData.company}
-                  onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-                />
-              </div>
-
-              <div className="sm:col-span-2">
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-700">
-                  Subject *
-                </label>
-                <select
-                  name="subject"
-                  id="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
                   required
-                >
-                  <option value="">Select a subject</option>
-                  <option value="general">General Inquiry</option>
-                  <option value="support">Technical Support</option>
-                  <option value="sales">Sales</option>
-                  <option value="partnership">Partnership</option>
-                </select>
+                />
               </div>
 
-              <div className="sm:col-span-2">
+              <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-                  Message *
+                  Message
                 </label>
                 <textarea
                   name="message"
                   id="message"
-                  rows={6}
+                  rows={4}
+                  placeholder="Your message here..."
                   value={formData.message}
                   onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-                  required
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
                 />
               </div>
+            </div>
 
-              <div className="sm:col-span-2">
-                <button
-                  type="submit"
-                  className="w-full inline-flex justify-center py-3 px-6 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                >
-                  Send Message
-                </button>
-              </div>
-            </form>
+            <div className="mt-6">
+              <button
+                type="submit"
+                className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              >
+                Send Message
+              </button>
+            </div>
+          </form>
           </div>
         </div>
       </div>
